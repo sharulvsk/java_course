@@ -1,2 +1,8 @@
+A=>
 PS C:\From Destop\java_course> javac Hello.java
 PS C:\From Destop\java_course> java Hello
+B=>
+You have two classes with main() methods: 
+expense, Hello. 
+Java will only execute one at a time, depending on what you run. 
+java expense or java Hello
