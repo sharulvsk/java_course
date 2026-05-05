@@ -32,7 +32,47 @@ class Student {
 class Employee{
     String name;
     int id;
+    void show1(){
+        //StringBuffer is mutable, modifies the same object, memory efficient, thread safe, synchronized
+        StringBuffer fn1=new StringBuffer();
+        System.out.println(fn1);
+        System.out.println(fn1.hashCode());
+        System.out.println(fn1.capacity());
+        fn1.append("Arul,");
+        System.out.println(fn1);
+        System.out.println(fn1.hashCode());
+        System.out.println(fn1.capacity());
+        fn1.append("Twin,");
+        System.out.println(fn1);
+        System.out.println(fn1.hashCode());
+        System.out.println(fn1.capacity());
+        fn1.reverse();
+        System.out.println(fn1);
+        System.out.println(fn1.hashCode());
+        System.out.println(fn1.capacity());
+        fn1.delete(0, fn1.length());
+        System.out.println(fn1);
+        System.out.println(fn1.hashCode());
+        System.out.println(fn1.capacity());
+        fn1.insert(0,"Arul");
+        System.out.println(fn1);
+        System.out.println(fn1.hashCode());
+        System.out.println(fn1.capacity());
+    }
+    void show2(){
+        //String is immutable, creates new object for every change, memory inefficient
+        String fn2=new String();
+        System.out.println(fn2);
+        System.out.println(fn2.hashCode());
+        fn2="Tom";
+        System.out.println(fn2);
+        System.out.println(fn2.hashCode());
+        fn2="Jerry"+fn2;
+        System.out.println(fn2);
+        System.out.println(fn2.hashCode());
+    }
 }
+
 class expense{
     public static void main(String args[]){
         int a=10;
@@ -77,6 +117,19 @@ class expense{
             System.out.println("Name: "+e[i].name);
             System.out.println("Id: "+e[1].id);
         }
+        String[] names=new String[2];
+        names[0]="Alice";
+        names[1]="Bob";
+        for(String n:names){
+            System.out.println(n);
+        }
+        String[] years=new String[]{"2020","2021"};
+        for(String y:years){
+            System.out.println(y);
+        }
+        Employee emp=new Employee();
+        emp.show1();
+        emp.show2();
     }
 }
 class Hello{
@@ -141,5 +194,7 @@ class Hello{
             System.out.println("Hi");
             k++;
         }while(k<3);
+ 
     }
 }
+
